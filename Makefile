@@ -20,7 +20,8 @@ download-fedora-coreos:
 # Source: https://github.com/CentOS/centos-boot-layered/tree/main/fedora-boot-cloud
 .PHONY: download-fedora-cloud
 download-fedora-cloud:
-	curl https://storage.googleapis.com/centos-boot-dev/fedora-boot-cloud.qcow2 -o ./images/fedora-boot-cloud.qcow2
+	mkdir -p ${IMAGES_DIR}
+	curl https://storage.googleapis.com/centos-boot-dev/fedora-boot-cloud.qcow2 -o ${IMAGES_DIR}/fedora-boot-cloud.qcow2
 
 
 # virt-install requires most paths to be absolute, so try defaulting to
